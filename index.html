@@ -12,6 +12,31 @@
 <body>
 
     <div class="container">
+        <div class="welcome-page">
+            <h1>Welcome to my Quiz App</h1>
+            <div class="welcome-page-dashboard">
+                <p>Please choose the difficulty level and type in number of questions:</p>
+                <div>
+                    <label htmlFor = "difficulty">Level:</label>
+                    <select id = 'difficulty' name = 'difficulty'>
+                        <option selected value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor = 'amount'>Number of questions:</label>
+                    <select id = "amount" name = 'amount'>
+                        <option value="5">5</option>
+                        <option selected value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <button id="start">Start Quiz</button>
+            </div>
+        </div>
         <div class="quiz-window">
             <h1 class="quiz-header">Simple Trivia</h1>
             <div class="quiz-main">

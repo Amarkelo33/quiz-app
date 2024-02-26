@@ -17,13 +17,14 @@
     background: #fff;
     border-radius: 10px;
     top: 50%;
+    display: none;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     padding: 30px 30px;
 }
 
-.quiz-header {
+.quiz-header, .welcome-page h1 {
     font-size: 25px;
     color: #001e4d;
     font-weight: 600;
@@ -35,7 +36,7 @@
     padding: 20px 0px;
 }
 
-.quiz-main-question {
+.quiz-main-question, .welcome-page-dashboard p {
     font-size: 18px;
     color: #001e4d;
     font-weight: 600;
@@ -65,7 +66,7 @@
     cursor: no-drop;
 }
 
-.quiz-main-next {
+.quiz-main-next, button {
     background: #001e4d;
     color: #fff;
     font-weight: 500;
@@ -84,4 +85,54 @@
 
 .incorrect {
     background: #ff9393;
+}
+
+.welcome-page {
+    max-width: 540px;
+    width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 30px 30px;
+}
+
+.welcome-page-dashboard {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px; 
+    font-size: 18px;
+}
+
+.welcome-page-dashboard p {
+    font-size: 20px;
+}
+
+.welcome-page-dashboard div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+select, input {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 20px;
+}
+
+button {
+    display: block;
+    margin-top: 5px;
 }

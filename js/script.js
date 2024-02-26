@@ -1,14 +1,22 @@
-const apiUrl = 'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple';
+const apiUrl = 'https://opentdb.com/api.php?amount=';
 
 const quizQuestion = document.querySelector('.quiz-main-question'),
       quizAnswer = document.querySelector('.quiz-main-answers'),
       quizNext = document.querySelector('.quiz-main-next');
 
-async function createQuestions() {
+const levelSelect = document.querySelector('#difficulty');
+const numOfQuestions = document.querySelector('#amount');
 
-    const response = await fetch(apiUrl);
+const startQuiz = document.querySelector('#start');
+
+const quizWindow = document.querySelector('.quiz-window');
+const entryWindow = document.querySelector('.welcome-page')
+
+async function createQuestions(level, num) {
+
+    const response = await fetch(apiUrl + num + '&category=9&difficulty=' + level + '&type=multiple');
     var data = await response.json();
-
+    
     const questions = [];
 
     data.results.forEach((result) => {
@@ -88,7 +96,7 @@ async function createQuestions() {
     
     function showScore() {
         resetState();
-        quizQuestion.innerHTML = `You scored ${score} out of 10!`;
+        quizQuestion.innerHTML = `You scored ${score} out of ${questions.length}!`;
         quizNext.innerHTML = "Play Again";
         quizNext.style.display = 'block';
     }
@@ -131,4 +139,8 @@ async function createQuestions() {
 
 }
 
-createQuestions();
+startQuiz.addEventListener('click', () => {
+    entryWindow.style.display = 'none';
+    quizWindow.style.display = 'block';
+    createQuestions(levelSelect.value, numOfQuestions.value);
+})
