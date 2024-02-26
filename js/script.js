@@ -106,6 +106,7 @@ async function createQuestions() {
         if(currentQuestionIndex < questions.length) {
             handleNextButton();
         } else {
+            location.reload();
             startQuiz();
         }
     })
